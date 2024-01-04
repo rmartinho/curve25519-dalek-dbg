@@ -1,0 +1,22 @@
+[package]
+name = "curve25519-dalek-dbg"
+version = "0.1.0"
+edition = "2021"
+
+license="CC0"
+description="Debugging helpers for code that uses curve25519-dalek"
+repository="https://github.com/rmartinho/curve25519-dalek-dbg"
+
+[features]
+default = ["digest", "rand_core"]
+digest = ["curve25519-dalek/digest", "dep:digest"]
+rand_core = ["curve25519-dalek/rand_core", "dep:rand_core"]
+
+[dependencies]
+curve25519-dalek = "4"
+digest = { version = "0.10", optional = true }
+rand_core = { version = "0.6", optional = true }
+subtle = "2"
+
+[dev-dependencies]
+rand = "0.8"
